@@ -5,13 +5,13 @@
 int main(int argc, char **argv)
 {
 
-    printf("%lf", taylor_sine(1, 8));
+    printf("%lf", taylor_sine(1, 9));
     printf("\n");
 
-    printf("%lf", taylor_sine(10, 12));
+    printf("%lf", taylor_sine(12, 14));
     printf("\n");
 
-    printf("%lf", taylor_sine(20, 50));
+    printf("%lf", taylor_sine(30, 50));
     printf("\n");
 
     return 0;
