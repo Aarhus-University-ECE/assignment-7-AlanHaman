@@ -4,14 +4,13 @@
 #include <math.h>
 double taylor_sine(double x, int n) {
     /* implement your function here */
-    // Først sørger jeg for at 0 er større end 0.
+    // assert to make sur n>0
     assert(n > 0);
 
-    // Her opretter jeg nogle variaberler. Sine skal gemme mit output Sine.
-    // Runde tæller hvilken potens og faktorisering vi er ved. Sign fortæller
-    // noget om fortegnet. Altså om brøken skal lægge til eller trække fra.
+    
+    // round counts which power and factorization we are at. 
     double sine = 0;
-    int runde = 1;
+    int round = 1;
     int sign = 1;
 
     // Jeg laver en for løkke så man regner Sinus med n præcision.
@@ -23,14 +22,14 @@ double taylor_sine(double x, int n) {
         // Dette for loop regner tælleren i brøken. Altså x^runde. Jeg gemmer
         // svaret i variablen top.
         double top = x;
-        for (int j = 1; j < runde; j++) {
+        for (int j = 1; j < round; j++) {
             top = top * x;
         }
 
         // Her er et for loop som regner nævneren i brøken. Altså fakulteten af
         // runde. Den gemmer jeg i variablen bottom.
         double bottom = 1;
-        for (int j = 1; j <= runde; j++) {
+        for (int j = 1; j <= round; j++) {
             bottom = bottom * j;
         }
 
@@ -45,7 +44,7 @@ double taylor_sine(double x, int n) {
         sign = sign * -1;
 
         // Her opdaterer jeg runde, så runde skifter i intervallet 1, 3, 5 osv..
-        runde = runde + 2;
+        round = round + 2;
     }
 
     return sine;
