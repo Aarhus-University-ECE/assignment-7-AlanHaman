@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "taylor_sine.h"
+#include <math.h>
 
 // Add your test cases for Exercise 1b,c) here
 int main(int argc, char **argv)
